@@ -14,19 +14,18 @@ export const NewsContextProvider = (props) => {
     else{
       url= `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
     }
-    console.log(props.search,"Zeba",url)
+    
   useEffect(() => {
 
     axios
       .get(url)
-      .then((response) => {setData(response.data);console.log(response,"zeba")})
+      .then((response) => setData(response.data))
       .catch((error) => console.log(error));
   }, [url]);
 
   return (
    
     <NewsContext.Provider value={{ data }}>
-       {console.log("new render data",data)}
       {props.children}
     </NewsContext.Provider>
   );

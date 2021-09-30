@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { NewsContext } from "../NewsContext";
 import NewsCard from "./NewsCard";
-import Header from "./Header"
+
 
 function News(props) {
   const { data } = useContext(NewsContext);
-  console.log(data,"data in news");
-  useEffect(()=>{
-    console.log(data,"in news")
-  },[data])
+
 
   return (
     <div>

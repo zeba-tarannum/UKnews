@@ -1,4 +1,4 @@
-import  React ,{useReducer} from 'react';
+import  React  from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -49,9 +49,6 @@ export default function BasicModal(props) {
                                  sortBy:''});
  const[sub,setSub]=React.useState(false)
 
-
-  console.log(props,"state")
-
   const handleClose = () => {props.setOpen(false);
                              props.setSearch(query)}
     const handleSubmit = () => {
@@ -66,11 +63,10 @@ export default function BasicModal(props) {
   const handleChange = e => {
     const {name , value} = e.target;
     const newQuery = {...query};
-    console.log(newQuery,"1")
     newQuery[name]=value
     setq(newQuery)
 }
- console.log(query)
+
   return (
     <div>
 

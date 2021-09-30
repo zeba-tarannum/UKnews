@@ -1,14 +1,11 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-// import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-// import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import NewsSearch from "./NewsSearch"
-import axios from "axios"
 import { NewsContextProvider } from "../NewsContext"
 import News from "./News"
 
@@ -74,8 +71,6 @@ export default function SearchAppBar() {
   const classes = useStyles();
   const [search,setSearch]=useState({})
   const [open,setOpen] = useState(false)
-console.log(Object.keys(search).length)
-  
 
   return (
     <div className={classes.root}>
@@ -84,7 +79,7 @@ console.log(Object.keys(search).length)
           <Typography className={classes.title} variant="h6" noWrap>
             UK News
           </Typography>
-          <div className={classes.search}   onClick={()=>{setOpen(true);console.log('open',open)}}>
+          <div className={classes.search}   onClick={()=>setOpen(true)}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
